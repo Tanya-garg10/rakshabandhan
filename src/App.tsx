@@ -47,6 +47,20 @@ export default function App() {
   useEffect(() => {
     const handleFirstInteraction = () => {
       setIsPlayingAudio(true);
+      
+      // Directly play the YouTube iframe synchronously within the user interaction stack (required for mobile)
+      try {
+        const iframe = document.getElementById('rakhi-yt-player') as HTMLIFrameElement | null;
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(
+            JSON.stringify({ event: 'command', func: 'playVideo', args: [] }),
+            '*'
+          );
+        }
+      } catch (err) {
+        console.error('Failed to trigger audio play:', err);
+      }
+
       ['click', 'touchstart', 'keydown'].forEach((evt) =>
         document.removeEventListener(evt, handleFirstInteraction)
       );
