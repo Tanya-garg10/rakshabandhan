@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Rakshabandhan Family Album
 
-# Run and deploy your AI Studio app
+A digital family album and interactive experience created to celebrate the beautiful bond of Rakshabandhan.
 
-This contains everything you need to run your app locally.
+## Features
+- **10 Interactive Chapters:** Journey through a story from childhood memories to present day.
+- **Background Music:** Enjoy a soulful Rakshabandhan theme song while browsing the memories.
+- **Beautiful Typography:** Uses classical and Devanagari fonts for an authentic cultural feel.
+- **Interactive UI:** Smooth transitions and animations powered by Motion.
 
-View your app in AI Studio: https://ai.studio/apps/f1ed6a20-aae2-4ffe-8b7a-d9d8e1e38920
+## Technologies Used
+- React (with TypeScript)
+- Vite
+- Tailwind CSS
+- Motion (Framer Motion)
+- Lucide React (Icons)
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Tanya-garg10/rakshabandhan.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 3. Run the app:
-   `npm run dev`
+   ```bash
+   npm run dev
+   ```
+
+## Live Preview
+*(Add your live URL here once deployed)*
