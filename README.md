@@ -32,5 +32,4 @@ A digital family album and interactive experience created to celebrate the beaut
    npm run dev
    ```
 
-## Live Preview
-*(Add your live URL here once deployed)*
+## Made by Tanya garg
