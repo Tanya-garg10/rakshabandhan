@@ -41,7 +41,27 @@ export default function App() {
   const [currentScreen, setCurrentScreen] = useState<number>(0);
   const [direction, setDirection] = useState<number>(1);
   const [isChapterMenuOpen, setIsChapterMenuOpen] = useState(false);
-  const [isPlayingAudio, setIsPlayingAudio] = useState(true);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
+  // Play audio on first user interaction to bypass browser autoplay blocks
+  useEffect(() => {
+    const handleFirstInteraction = () => {
+      setIsPlayingAudio(true);
+      ['click', 'touchstart', 'keydown'].forEach((evt) =>
+        document.removeEventListener(evt, handleFirstInteraction)
+      );
+    };
+
+    ['click', 'touchstart', 'keydown'].forEach((evt) =>
+      document.addEventListener(evt, handleFirstInteraction, { once: true })
+    );
+
+    return () => {
+      ['click', 'touchstart', 'keydown'].forEach((evt) =>
+        document.removeEventListener(evt, handleFirstInteraction)
+      );
+    };
+  }, []);
 
   // Persistent Album Data
   const [albumData, setAlbumData] = useState<FamilyAlbumData>(() => {

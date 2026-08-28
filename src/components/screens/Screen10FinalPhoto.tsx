@@ -34,18 +34,18 @@ export const Screen10FinalPhoto: React.FC<Screen10Props> = ({
             src={finalPhoto.url}
             alt="Family Complete"
             animate={{
-              scale: [1, 1.08, 1],
+              scale: [1, 1.05, 1],
             }}
             transition={{
               duration: 20,
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
 
-          {/* Vignette Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/40 pointer-events-none" />
+          {/* Vignette Overlay (Darkened for better text visibility) */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/40 pointer-events-none" />
 
           {/* Poetic Overlay on bottom of photo */}
           <div className="absolute bottom-6 left-6 right-6 text-center space-y-1 sm:space-y-2 pointer-events-none">
